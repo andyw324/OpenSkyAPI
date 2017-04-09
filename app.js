@@ -67,7 +67,7 @@ https.get('https://opensky-network.org/api/states/all',(res) => {
 			var outputLine = "";
 
 			// store the timeStamp value of when the data was obtained - first value in JSON
-			var ts = dateFormat(jsonData.time,"yyyy-mm-dd HH:MM:ss");
+			var ts = dateFormat(jsonData.time*1000,"yyyy-mm-dd HH:MM:ss");
 			// count number of flight details returned
 			var numRec = jsonData.states.length;
 
