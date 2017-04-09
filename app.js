@@ -74,7 +74,7 @@ https.get('https://opensky-network.org/api/states/all',(res) => {
 			// Loop through each flight record and remove square brackets form start and end of array value
 			for (i=0; i < numRec; i++) {
 				outputLine = JSON.stringify(jsonData.states[i]);
-				outputLine = outputLine.slice(1,outputLine.length - 1);
+				outputLine = outputLine.slice(1,outputLine.length - 1).replace(/null/g,"");
 				// add in timeStamp value and line break
 				outputLine += "," + ts + "\n";
 				// add to overall output csv
